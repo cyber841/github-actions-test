@@ -1,0 +1,14 @@
+name: Test Exploit
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vulnerable Step
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          echo "Daxil olan basliq: $PR_TITLE"
